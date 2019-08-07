@@ -8,6 +8,7 @@ import Layout from '../components/layout'
 import { Box, AnimatedBox, Button } from '../elements'
 import SEO from '../components/SEO'
 
+
 const PBox = styled(AnimatedBox)`
   max-width: 1400px;
   margin: 0 auto;
@@ -94,6 +95,8 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
   const titleAnimation = useSpring({ config: config.slow, delay: 300, from: { opacity: 0 }, to: { opacity: 1 } })
   const descAnimation = useSpring({ config: config.slow, delay: 600, from: { opacity: 0 }, to: { opacity: 1 } })
   const imagesAnimation = useSpring({ config: config.slow, delay: 800, from: { opacity: 0 }, to: { opacity: 1 } })
+
+  
 
   return (
     <Layout color={project.color}>
