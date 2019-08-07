@@ -7,6 +7,7 @@ import { Box, Flex } from '../elements'
 import theme from '../../config/theme'
 import reset from '../styles/reset'
 import Logo from './logo'
+import { SocialIcon } from 'react-social-icons';
 
 const GlobalStyles = createGlobalStyle`
   *::before,
@@ -229,7 +230,7 @@ const Layout = ({ children, color }: LayoutProps) => {
               justifyContent="space-between"
             >
               <Box width={['3rem', '4rem', '5rem', '6rem']}>
-                <Link to="/" aria-label="LekoArts, Back to Home">
+                <Link to="/" aria-label="Wild Surmise, Back to Home">
                   <Logo />
                 </Link>
               </Box>
@@ -241,6 +242,9 @@ const Layout = ({ children, color }: LayoutProps) => {
                 flexDirection={['row', 'row', 'row', 'column']}
                 alignItems="flex-start"
               >
+                <a href={'http://powerfulmusic.bandcamp.com'} target={'_blank'}>
+                    {'Music'}
+                </a>
                 {data.navigation.nodes.map(item => (
                   <PartialNavLink to={item.link} key={item.name}>
                     {item.name}
@@ -252,8 +256,10 @@ const Layout = ({ children, color }: LayoutProps) => {
           <Main>{children}</Main>
           <Footer color={color}>
             <Box p={[6, 6, 8]} fontSize={0}>
-              Starter by <a href="https://www.lekoarts.de/en">LekoArts</a>.<br />
-              <a href="https://github.com/LekoArts/gatsby-starter-portfolio-jodie">Source</a>.
+            <SocialIcon url="http://instagram.com/wildsurmisemusic" style={{ height: 35, width: 35, margin: 5 }}  bgColor="#000" fgColor="#fff"/>
+            <SocialIcon url="https://open.spotify.com/artist/6fSktQPfbhoRyhAs5RzVF8" style={{ height: 35, width: 35,margin: 5 }} bgColor="#000" fgColor="#fff"/>
+            <SocialIcon url="mailto:tom@wildsurmisemusic.com" style={{ height: 35, width: 35,margin: 5 }} bgColor="#000" fgColor="#fff"/>
+
             </Box>
           </Footer>
         </Wrapper>

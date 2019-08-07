@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import GridItem from '../components/grid-item'
 import SEO from '../components/SEO'
 import { ChildImageSharp } from '../types'
-
+import Header from '../components/header'
 type PageProps = {
   data: {
     firstProject: {
@@ -107,15 +107,10 @@ const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, three
     <Layout>
       <SEO />
       <Area style={pageAnimation}>
-        <FirstProject to={firstProject.slug} aria-label={`View project "${firstProject.title}"`}>
-          <Img fluid={firstProject.cover.childImageSharp.fluid} />
-          <span>{firstProject.title}</span>
-        </FirstProject>
-        <AboutUs to="/about" aria-label="Visit my about page">
-          <Img fluid={aboutUs.childImageSharp.fluid} />
-          <span>About</span>
-        </AboutUs>
-        <ThreeProjects>
+        
+      <h1> Latest Projects </h1>
+
+      <ThreeProjects>
           {threeProjects.nodes.map(project => (
             <GridItem to={project.slug} key={project.slug} aria-label={`View project "${project.title}"`}>
               <Img fluid={project.cover.childImageSharp.fluid} />
@@ -123,10 +118,7 @@ const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, three
             </GridItem>
           ))}
         </ThreeProjects>
-        <Instagram to="/instagram" aria-label="See my Instagram pictures">
-          <Img fluid={instagram.childImageSharp.fluid} />
-          <span>Instagram</span>
-        </Instagram>
+   
       </Area>
     </Layout>
   )
