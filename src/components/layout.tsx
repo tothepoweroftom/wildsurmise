@@ -243,7 +243,7 @@ const Layout = ({ children, color }: LayoutProps) => {
                 alignItems="flex-start"
               >
                 <a href={'http://powerfulmusic.bandcamp.com'} target={'_blank'}>
-                    {'Music'}
+                    {'Discography'}
                 </a>
                 {data.navigation.nodes.map(item => (
                   <PartialNavLink to={item.link} key={item.name}>

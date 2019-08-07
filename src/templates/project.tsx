@@ -120,10 +120,8 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
         </PBox>
       </Content>
       <PBox style={{ textAlign: 'center' }} py={10} px={[6, 6, 8, 10]}>
-        <h2>Want to start your own project?</h2>
-        <PButton color={project.color} py={4} px={8}>
-          Contact Us
-        </PButton>
+        <h2>Buy it here!</h2>
+        <a className={"gumroad-button"} href={"https://gum.co/demo"} target={"_blank"}>Buy Macalla Delay VST & AU</a>
       </PBox>
     </Layout>
   )

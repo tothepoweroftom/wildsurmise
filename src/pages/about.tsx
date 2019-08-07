@@ -15,11 +15,11 @@ const About = () => {
     <Layout>
       <SEO title="About | Jodie" desc="Hi. I'm LekoArts! You can visit my website or my other Gatsby projects." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]}>
-        <h1>Hi. I'm LekoArts!</h1>
-        <p>
-          You can visit my <a href="https://www.lekoarts.de/en">website</a> or my other{' '}
-          <a href="https://gatsby-starter-portfolio.netlify.com">Gatsby projects</a>.
-        </p>
+        <h1> About Us</h1>
+      <p>Wild Surmise Music is a small record label and music technology company based in The Netherlands and Ireland.</p>
+
+
+
       </AnimatedBox>
     </Layout>
   )
