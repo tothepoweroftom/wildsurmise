@@ -19,11 +19,7 @@ const Introduction = () => {
     top:0px;
     height: 25vh;
     padding: 0px 0px;
-  
-  
-    @media (max-width: ${props => props.theme.breakpoints[1]}) {
-        height: 50vh;
-    }
+
   `
   
     return (
