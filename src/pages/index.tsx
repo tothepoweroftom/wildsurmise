@@ -102,7 +102,6 @@ const Latest = styled.div`
   width: 100%;
   text-align: center;
   position: relative;
-  margin-top: 10px;
 
   @media (max-width: ${props => props.theme.breakpoints[1]}) {
 
@@ -143,6 +142,8 @@ const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, fourP
             <GridItem to={project.slug} key={project.slug} aria-label={`View project "${project.title}"`}>
               <Img fluid={project.cover.childImageSharp.fluid} />
               <span>{project.title}</span>
+              <span style={{fontWeight: '200', marginTop: '35px'}}>{project.subtitle}</span>
+
             </GridItem>
           ))}
         </FourProjects> 
@@ -170,6 +171,7 @@ export const query = graphql`
     fourProjects: allProjectsYaml(limit: 4) {
       nodes {
         title
+        subtitle
         slug
         cover {
           childImageSharp {

@@ -17,7 +17,6 @@ const Introduction = () => {
     text-align: center;
     position:relative;
     top:0px;
-    height: 25vh;
     padding: 0px 0px;
 
   `

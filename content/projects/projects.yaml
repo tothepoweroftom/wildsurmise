@@ -1,4 +1,5 @@
 - title: "Macalla Delay"
+  subtitle: "Audio Plugin"
   title_detail: "VST & AU plugin"
   slug: "/macalla"
   category: "Audio Plugins"
@@ -7,4 +8,15 @@
   cover: "./macalla/macalla-promo-lg.jpg"
   desc: "Macalla delay is an experimental delay effect. "
   gumroad: "https://gum.co/demo"
+- title: "Suaimhneas"
+  subtitle: "Audio-visual Work"
+  title_detail: "Audiovisual project"
+  slug: "/suaimhneas"
+  category: "Music Works"
+  color: "lightblue"
+  images: "suaimhneas"
+  cover: "./suaimhneas/projects-color-001.jpg"
+  desc: "Suaimhneas is an audio visual piece. "
+  gumroad: ""
+  youtube: ''
 
