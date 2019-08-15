@@ -8,6 +8,9 @@ import GridItem from '../components/grid-item'
 import SEO from '../components/SEO'
 import { ChildImageSharp } from '../types'
 import Header from '../components/header'
+import HeaderVideo from '../components/header-video'
+import Introduction from './subcomponents/introduction'
+
 type PageProps = {
   data: {
     firstProject: {
@@ -15,7 +18,7 @@ type PageProps = {
       slug: string
       cover: ChildImageSharp
     }
-    threeProjects: {
+    fourProjects: {
       nodes: {
         title: string
         slug: string
@@ -29,22 +32,18 @@ type PageProps = {
 
 const Area = styled(animated.div)`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 35vw 40vw 25vw;
   grid-template-areas:
-    'first-project about-us about-us'
-    'three-projects three-projects three-projects'
-    'instagram instagram instagram';
+    'four-projects four-projects four-projects';
 
   @media (max-width: ${props => props.theme.breakpoints[3]}) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 35vw 30vw 30vw 25vw;
 
     grid-template-areas:
-      'first-project first-project about-us about-us'
-      'three-projects three-projects three-projects three-projects'
-      'three-projects three-projects three-projects three-projects'
-      'instagram instagram instagram instagram';
+      'four-projects four-projects four-projects four-projects'
+      'four-projects four-projects four-projects four-projects'
   }
 
   @media (max-width: ${props => props.theme.breakpoints[1]}) {
@@ -52,11 +51,9 @@ const Area = styled(animated.div)`
     grid-template-rows: repeat(5, 38vw);
 
     grid-template-areas:
-      'first-project about-us'
-      'three-projects three-projects'
-      'three-projects three-projects'
-      'three-projects three-projects'
-      'instagram instagram';
+      'four-projects four-projects'
+      'four-projects four-projects'
+      'four-projects four-projects'
   }
 
   @media (max-width: ${props => props.theme.breakpoints[0]}) {
@@ -64,12 +61,11 @@ const Area = styled(animated.div)`
     grid-template-rows: repeat(6, 50vw);
 
     grid-template-areas:
-      'first-project'
-      'about-us'
-      'three-projects'
-      'three-projects'
-      'three-projects'
-      'instagram';
+      'four-projects'
+      'four-projects'
+      'four-projects'
+      'four-projects'
+
   }
 `
 
@@ -81,22 +77,45 @@ const AboutUs = styled(GridItem)`
   grid-area: about-us;
 `
 
-const ThreeProjects = styled.div`
-  grid-area: three-projects;
+const FourProjects = styled.div`
+  grid-area: four-projects;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: ${props => props.theme.breakpoints[1]}) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
 `
+const Youtube = styled.div`
+
+  width: 100%;
+  text-align: center;
+  position: relative;
+
+
+  @media (max-width: ${props => props.theme.breakpoints[1]}) {
+  }
+`
+const Latest = styled.div`
+
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
+
+  @media (max-width: ${props => props.theme.breakpoints[1]}) {
+
+  }
+`
+
 
 const Instagram = styled(GridItem)`
   grid-area: instagram;
 `
 
-const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, threeProjects, aboutUs, instagram } }) => {
+
+const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, fourProjects, aboutUs, instagram } }) => {
   const pageAnimation = useSpring({
     config: config.slow,
     from: { opacity: 0 },
@@ -106,20 +125,29 @@ const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, three
   return (
     <Layout>
       <SEO />
-      <Area style={pageAnimation}>
-        
-      <h1> Latest Projects </h1>
 
-      <ThreeProjects>
-          {threeProjects.nodes.map(project => (
+      <Introduction>
+      </Introduction>
+      {/* <Youtube id="youtube">
+        <HeaderVideo>
+        </HeaderVideo>
+      </Youtube> */}
+
+      <Latest>
+        <h2>Latest Work</h2>
+      </Latest>
+
+      <Area>
+       <FourProjects>
+          {fourProjects.nodes.map(project => (
             <GridItem to={project.slug} key={project.slug} aria-label={`View project "${project.title}"`}>
               <Img fluid={project.cover.childImageSharp.fluid} />
               <span>{project.title}</span>
             </GridItem>
           ))}
-        </ThreeProjects>
-   
-      </Area>
+        </FourProjects> 
+        </Area>
+
     </Layout>
   )
 }
@@ -139,7 +167,7 @@ export const query = graphql`
         }
       }
     }
-    threeProjects: allProjectsYaml(limit: 3, skip: 1) {
+    fourProjects: allProjectsYaml(limit: 4) {
       nodes {
         title
         slug

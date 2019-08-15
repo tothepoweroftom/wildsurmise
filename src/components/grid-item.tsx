@@ -13,13 +13,14 @@ const GridItem = styled(Link)`
   }
   > div img {
     transition: all 0.3s ease 0s !important;
-    filter: blur(2px);
 
   }
   > span {
     z-index: 10;
-    color: red;
+    color: black;
     position: absolute;
+    opacity:1;
+    transition: opacity 0.4s;
     left: 0;
     right: 0;
     text-align: right;
@@ -35,8 +36,11 @@ const GridItem = styled(Link)`
   }
   &:hover {
     > div img {
-      transform: scale(1.1);
-      filter: blur(0px);
+      transform: scale(1.03);
+
+    }
+    > span {
+      opacity: 0;
 
     }
   }

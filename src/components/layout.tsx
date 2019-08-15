@@ -8,6 +8,7 @@ import theme from '../../config/theme'
 import reset from '../styles/reset'
 import Logo from './logo'
 import { SocialIcon } from 'react-social-icons';
+import Navbar from './navbar'
 
 const GlobalStyles = createGlobalStyle`
   *::before,
