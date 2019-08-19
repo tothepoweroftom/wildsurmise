@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <Layout>
-      <SEO title="About | Jodie" desc="Hi. I'm LekoArts! You can visit my website or my other Gatsby projects." />
+      <SEO title="About | Wild Surmise" desc="Welcome to Wild Surmise Music home of music and technology." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]}>
         <h1> About Us</h1>
       <p>Wild Surmise Music is a small record label and music technology company based in The Netherlands and Ireland.</p>

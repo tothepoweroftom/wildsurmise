@@ -8,15 +8,21 @@
   cover: "./macalla/macalla-promo-lg.jpg"
   desc: "Macalla delay is an experimental delay effect. "
   gumroad: "https://gum.co/demo"
+  spotify: ""
+  overlay: "black"
+  type: "plugin"
 - title: "Suaimhneas"
   subtitle: "Audio-visual Work"
   title_detail: "Audiovisual project"
   slug: "/suaimhneas"
   category: "Music Works"
-  color: "lightblue"
+  color: "white"
   images: "suaimhneas"
-  cover: "./suaimhneas/projects-color-001.jpg"
-  desc: "Suaimhneas is an audio visual piece. "
+  cover: "./suaimhneas/suaimhneas-cover.png"
+  overlay: "white"
+  desc: "Suaimhneas is an art project about finding serenity. The calm world that resides within us. The silence that greets us when we close our eyes. We see this through the main character who is facing up to his stresses and difficulties in a busy city and begins to daydream about his peaceful childhood on a quiet and isolated island."
   gumroad: ""
-  youtube: ''
+  youtube: 'tjv_8akjVEU'
+  spotify: 'spotify:album:1LPBuMVHZJumH1elgZRa16'
+  type: "music"
 

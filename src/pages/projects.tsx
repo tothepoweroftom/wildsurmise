@@ -14,6 +14,7 @@ type PageProps = {
       nodes: {
         title: string
         slug: string
+        type: string
         cover: ChildImageSharp
       }[]
     }
@@ -22,8 +23,8 @@ type PageProps = {
 
 const Area = styled(animated.div)`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 50vw;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-auto-rows: 25vw;
 
   @media (max-width: ${props => props.theme.breakpoints[2]}) {
     grid-template-columns: 1fr;
@@ -42,17 +43,22 @@ const Projects: React.FunctionComponent<PageProps> = ({ data: { projects } }) =>
     <Layout color="#fff">
       <SEO title="Projects | Wild Surmise Music" />
       <Area style={pageAnimation}>
-        {projects.nodes.map(project => (
+        {projects.nodes.map(project => {
+          return project.type === "plugin" ?
           <GridItem key={project.slug} to={project.slug} aria-label={`View project "${project.title}"`}>
-            <Img fluid={project.cover.childImageSharp.fluid} />
-            <span>{project.title}</span>
-            <span style={{}}>{project.title}</span>
+          <Img fluid={project.cover.childImageSharp.fluid} />
+          <span>{project.title}</span>
+          <span style={{}}>{project.title}</span>
 
-          </GridItem>
-        ))}
+        </GridItem> : null
+
+      
+          
+        })}
       </Area>
     </Layout>
   )
+
 }
 
 export default Projects
@@ -63,6 +69,7 @@ export const query = graphql`
       nodes {
         title
         slug
+        type
         cover {
           childImageSharp {
             fluid(quality: 95, maxWidth: 1200) {

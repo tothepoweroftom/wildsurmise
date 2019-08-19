@@ -23,6 +23,7 @@ type PageProps = {
         title: string
         slug: string
         cover: ChildImageSharp
+        overlay: string
       }[]
     }
     aboutUs: ChildImageSharp
@@ -141,8 +142,8 @@ const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, fourP
           {fourProjects.nodes.map(project => (
             <GridItem to={project.slug} key={project.slug} aria-label={`View project "${project.title}"`}>
               <Img fluid={project.cover.childImageSharp.fluid} />
-              <span>{project.title}</span>
-              <span style={{fontWeight: '200', marginTop: '35px'}}>{project.subtitle}</span>
+              <span style={{color: project.overlay}}>{project.title}</span>
+              <span style={{fontWeight: '200', color: project.overlay, marginTop: '35px'}}>{project.subtitle}</span>
 
             </GridItem>
           ))}
@@ -173,6 +174,7 @@ export const query = graphql`
         title
         subtitle
         slug
+        overlay
         cover {
           childImageSharp {
             fluid(quality: 95, maxWidth: 1200) {

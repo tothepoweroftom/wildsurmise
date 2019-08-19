@@ -13,7 +13,7 @@ const Music = () => {
 
   return (
     <Layout>
-      <SEO title="Music | Jodie" desc="Hi. I'm LekoArts! You can visit my website or my other Gatsby projects." />
+      <SEO title="Music | Wild Surmise Music" desc="Wild Surmise Music is a micro record label in Ireland and the Netherlands" />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]}>
         <h1> Music Us</h1>
       <p>Wild Surmise Music is a small record label and music technology company based in The Netherlands and Ireland.</p>
