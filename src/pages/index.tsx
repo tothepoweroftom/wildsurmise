@@ -55,17 +55,19 @@ const Area = styled(animated.div)`
       'four-projects four-projects'
       'four-projects four-projects'
       'four-projects four-projects'
+      'four-projects four-projects'
+
   }
 
   @media (max-width: ${props => props.theme.breakpoints[0]}) {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 50vw);
+    grid-template-rows: repeat(5, 50vw);
 
     grid-template-areas:
       'four-projects'
       'four-projects'
       'four-projects'
-      'four-projects'
+      'four-projects four-projects'
 
   }
 `
@@ -85,7 +87,7 @@ const FourProjects = styled.div`
 
   @media (max-width: ${props => props.theme.breakpoints[1]}) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
   }
 `
 const Youtube = styled.div`
