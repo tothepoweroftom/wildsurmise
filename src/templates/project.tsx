@@ -127,7 +127,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
   const descAnimation = useSpring({ config: config.slow, delay: 600, from: { opacity: 0 }, to: { opacity: 1 } })
   const imagesAnimation = useSpring({ config: config.slow, delay: 800, from: { opacity: 0 }, to: { opacity: 1 } })
   console.log(project)
-  if(project.type === "music") {
+  if(project.type === "film") {
     return (
       <Layout color={project.color}>
       <SEO
@@ -160,7 +160,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
           width: "100%",
           border: "0",
         }}
-        videoId="1fI31TMMZmE"
+        videoId={project.youtube}
         opts={{
           width: "100%",
           playerVars: { // https://developers.google.com/youtube/player_parameters
@@ -188,7 +188,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
       </PBox> */}
     </Layout>
     )
-  } else {
+  } else if(project.type === "plugin") {
 
   return (
     <Layout color={project.color}>
@@ -222,7 +222,49 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
       </PBox>
     </Layout>
   )
-  }
+  } else if(project.type === "music") {
+
+    return (
+      <Layout color={project.color}>
+        <SEO
+          pathname={project.slug}
+          title={`${project.title_detail}`}
+          desc={project.desc}
+          node={project.parent}
+          banner={project.cover.childImageSharp.resize.src}
+          individual
+        />
+        <PBox py={10} px={[6, 6, 8, 10]}>
+          <Category style={categoryAnimation}>{project.category}</Category>
+          <animated.h1 style={titleAnimation}>{project.title_detail}</animated.h1>
+          <Description style={descAnimation}>
+            <div dangerouslySetInnerHTML={{ __html: project.desc }} />
+          </Description>
+        </PBox>
+        <Content bg={project.color} py={10}>
+          <PBox style={imagesAnimation} px={[6, 6, 8, 10]}>
+            {images.nodes.map(image => (
+              <Img alt={image.name} key={image.childImageSharp.fluid.src} fluid={image.childImageSharp.fluid} />
+            ))}
+          </PBox>
+          <Spotify>
+      <SpotifyPlayer
+        uri={project.spotify}
+        size={size}
+        view={view}
+        theme={theme}
+      />
+      </Spotify>
+        </Content> 
+  
+        
+        {/* <PBox style={{ textAlign: 'center' }} py={10} px={[6, 6, 8, 10]}>
+          <h2>Buy it here!</h2>
+          <a className={"gumroad-button"} href={"https://gum.co/demo"} target={"_blank"}>Buy Macalla Delay VST & AU</a>
+        </PBox> */}
+      </Layout>
+    )
+    }
 }
 
 export default Project

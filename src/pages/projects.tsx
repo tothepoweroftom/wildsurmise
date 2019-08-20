@@ -32,6 +32,10 @@ const Area = styled(animated.div)`
   }
 `
 
+const Title = styled.div`
+  padding: 20px;
+`
+
 const Projects: React.FunctionComponent<PageProps> = ({ data: { projects } }) => {
   const pageAnimation = useSpring({
     config: config.slow,
@@ -42,6 +46,9 @@ const Projects: React.FunctionComponent<PageProps> = ({ data: { projects } }) =>
   return (
     <Layout color="#fff">
       <SEO title="Projects | Wild Surmise Music" />
+      <Title>
+      <h1>Plugins</h1>
+      </Title>
       <Area style={pageAnimation}>
         {projects.nodes.map(project => {
           return project.type === "plugin" ?
