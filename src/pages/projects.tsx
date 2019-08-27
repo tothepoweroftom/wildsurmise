@@ -55,7 +55,9 @@ const Projects: React.FunctionComponent<PageProps> = ({ data: { projects } }) =>
           <GridItem key={project.slug} to={project.slug} aria-label={`View project "${project.title}"`}>
           <Img fluid={project.cover.childImageSharp.fluid} />
           <span>{project.title}</span>
-          <span style={{}}>{project.title}</span>
+          <span style={{marginTop: '50px', fontWeight: 100, }}>{project.subtitle}</span>
+          <span style={{marginTop: '100px', fontWeight: 400, fontSize: "18px"}}>{project.sale ? project.sale : ''}</span>
+          <span style={{marginTop: '120px', fontWeight: 100,fontSize: "18px", color: "grey", textDecoration: "line-through" }}>{project.price}</span>
 
         </GridItem> : null
 
@@ -75,7 +77,10 @@ export const query = graphql`
     projects: allProjectsYaml {
       nodes {
         title
+        subtitle
         slug
+        price
+        sale
         type
         cover {
           childImageSharp {

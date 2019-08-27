@@ -60,9 +60,12 @@ const YoutubeVideo = styled.div`
 
   position: relative;
   overflow: hidden;
+  padding: 0px 20vw;
 
 
-  @media (max-width: ${props => props.theme.breakpoints[1]}) {
+  @media (max-width: ${props => props.theme.breakpoints[3]}) {
+    padding: 0px 0px;
+
   }
 `
 
@@ -74,7 +77,7 @@ const Spotify = styled.div`
 type PageProps = {
   data: {
     project: {
-      title_detail: string
+      title: string
       color: string
       category: string
       desc: string
@@ -132,7 +135,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
       <Layout color={project.color}>
       <SEO
         pathname={project.slug}
-        title={`${project.title_detail}`}
+        title={`${project.title}`}
         desc={project.desc}
         node={project.parent}
         banner={project.cover.childImageSharp.resize.src}
@@ -140,7 +143,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
       />
       <PBox py={10} px={[6, 6, 8, 10]}>
         <Category style={categoryAnimation}>{project.category}</Category>
-        <animated.h1 style={titleAnimation}>{project.title_detail}</animated.h1>
+        <animated.h1 style={titleAnimation}>{project.title}</animated.h1>
         <Description style={descAnimation}>
           <div dangerouslySetInnerHTML={{ __html: project.desc }} />
         </Description>
@@ -159,13 +162,14 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
           left: "0",
           width: "100%",
           border: "0",
+          padding: "20%"
         }}
         videoId={project.youtube}
         opts={{
           width: "100%",
           playerVars: { // https://developers.google.com/youtube/player_parameters
             autoplay: 1,
-                  controls: 0,
+                  controls: 1,
           rel: 0,
           showinfo: 0
           }}}
@@ -194,7 +198,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
     <Layout color={project.color}>
       <SEO
         pathname={project.slug}
-        title={`${project.title_detail}`}
+        title={`${project.title}`}
         desc={project.desc}
         node={project.parent}
         banner={project.cover.childImageSharp.resize.src}
@@ -202,23 +206,50 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
       />
       <PBox py={10} px={[6, 6, 8, 10]}>
         <Category style={categoryAnimation}>{project.category}</Category>
-        <animated.h1 style={titleAnimation}>{project.title_detail}</animated.h1>
+
+        <animated.h1 style={titleAnimation}>{project.title}</animated.h1>
+        <div style={{padding: "0px 0px 30px 0px"}}>
+
+        <span>{project.sale} </span><span style={{textDecoration: "line-through", color:"grey"}}>{project.price}</span>
+        <br/>
+        <a className={"gumroad-button"} href={project.gumroad} target={"_blank"}>Buy Macalla Delay VST & AU</a>
+        </div>
         <Description style={descAnimation}>
           <div dangerouslySetInnerHTML={{ __html: project.desc }} />
         </Description>
       </PBox>
       <Content bg={project.color} py={10}>
-        <PBox style={imagesAnimation} px={[6, 6, 8, 10]}>
-          {images.nodes.map(image => (
-            <Img alt={image.name} key={image.childImageSharp.fluid.src} fluid={image.childImageSharp.fluid} />
-          ))}
-        </PBox>
+      <YoutubeVideo>
+      <YouTube
+        style={{
+          position: "absolute",
+          top: "0",
+          left: "0",
+          width: "100%",
+          border: "0",
+        }}
+        videoId={project.youtube}
+        opts={{
+          width: "100%",
+          playerVars: { // https://developers.google.com/youtube/player_parameters
+            autoplay: 1,
+                  controls: 0,
+          rel: 0,
+          showinfo: 0
+          }}}
+      />
+      </YoutubeVideo>
       </Content> 
 
       
       <PBox style={{ textAlign: 'center' }} py={10} px={[6, 6, 8, 10]}>
-        <h2>Buy it here!</h2>
-        <a className={"gumroad-button"} href={"https://gum.co/demo"} target={"_blank"}>Buy Macalla Delay VST & AU</a>
+        <h3>          Minimum Requirements</h3>
+        <ul style={{listStyle: 'none'}}>
+          <li>• OSX 10.8 or Windows 10 x64</li>
+
+<li>• Audio Units or VST compatible audio host </li>
+        </ul>
+
       </PBox>
     </Layout>
   )
@@ -228,7 +259,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
       <Layout color={project.color}>
         <SEO
           pathname={project.slug}
-          title={`${project.title_detail}`}
+          title={`${project.title}`}
           desc={project.desc}
           node={project.parent}
           banner={project.cover.childImageSharp.resize.src}
@@ -236,7 +267,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
         />
         <PBox py={10} px={[6, 6, 8, 10]}>
           <Category style={categoryAnimation}>{project.category}</Category>
-          <animated.h1 style={titleAnimation}>{project.title_detail}</animated.h1>
+          <animated.h1 style={titleAnimation}>{project.title}</animated.h1>
           <Description style={descAnimation}>
             <div dangerouslySetInnerHTML={{ __html: project.desc }} />
           </Description>
@@ -272,7 +303,7 @@ export default Project
 export const query = graphql`
   query ProjectTemplate($slug: String!, $images: String!) {
     project: projectsYaml(slug: { eq: $slug }) {
-      title_detail
+      title
       color
       category
       desc
@@ -281,6 +312,8 @@ export const query = graphql`
       gumroad
       youtube
       spotify
+      sale
+      price
       parent {
         ... on File {
           modifiedTime
