@@ -15,8 +15,10 @@ const About = () => {
     <Layout>
       <SEO title="About | Wild Surmise" desc="Welcome to Wild Surmise Music home of music and technology." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]}>
-        <h1> About Us</h1>
-      <p>Wild Surmise Music is a small record label and music technology company based in The Netherlands and Ireland.</p>
+        <h1> What's Important To Us</h1>
+      <p>First of all we want to make music and tools to inspire. Music has played a central role in our lives and making music is a natural impulse to pass on the music and insights we've gained.
+        This applies not just to the musicians but also the technologists who have inspired the world with their inventions. It is our belief that the two go hand in hand.
+      </p>
 
 
 

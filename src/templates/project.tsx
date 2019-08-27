@@ -212,7 +212,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
 
         <span>{project.sale} </span><span style={{textDecoration: "line-through", color:"grey"}}>{project.price}</span>
         <br/>
-        <a className={"gumroad-button"} href={project.gumroad} target={"_blank"}>Buy Macalla Delay VST & AU</a>
+        <a className={"gumroad-button"} href={project.gumroad} target={"_blank"}>Buy {project.title}</a>
         </div>
         <Description style={descAnimation}>
           <div dangerouslySetInnerHTML={{ __html: project.desc }} />
@@ -232,7 +232,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
         opts={{
           width: "100%",
           playerVars: { // https://developers.google.com/youtube/player_parameters
-            autoplay: 1,
+            autoplay: 0,
                   controls: 0,
           rel: 0,
           showinfo: 0

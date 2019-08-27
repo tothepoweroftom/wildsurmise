@@ -15,7 +15,7 @@ module.exports = {
   userTwitter: '@tothepoweroftom', // Twitter Username
   ogSiteName: 'wildsurmisemusic', // Facebook Site Name
   ogLanguage: 'en_US', // og:language
-  googleAnalyticsID: 'UA-XXXXXX-X',
+  googleAnalyticsID: 'UA-146513633-1',
 
   // Manifest and Progress color
   themeColor: '#db7436',
