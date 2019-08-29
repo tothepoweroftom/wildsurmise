@@ -244,7 +244,7 @@ const Layout = ({ children, color }: LayoutProps) => {
                 alignItems="flex-start"
               >
                 <a href={'http://powerfulmusic.bandcamp.com'} target={'_blank'}>
-                    {'Discography'}
+                    {'Music'}
                 </a>
                 {data.navigation.nodes.map(item => (
                   <PartialNavLink to={item.link} key={item.name}>
@@ -260,6 +260,7 @@ const Layout = ({ children, color }: LayoutProps) => {
             <SocialIcon url="http://instagram.com/wildsurmisemusic" style={{ height: 35, width: 35, margin: 5 }}  bgColor="#000" fgColor="#fff"/>
             <SocialIcon url="https://open.spotify.com/artist/6fSktQPfbhoRyhAs5RzVF8" style={{ height: 35, width: 35,margin: 5 }} bgColor="#000" fgColor="#fff"/>
             <SocialIcon url="mailto:tom@wildsurmisemusic.com" style={{ height: 35, width: 35,margin: 5 }} bgColor="#000" fgColor="#fff"/>
+            <p>tom@wildsurmisemusic.com</p>
 
             </Box>
           </Footer>

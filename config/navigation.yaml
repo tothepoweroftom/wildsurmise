@@ -1,5 +1,5 @@
-- name: "Music"
-  link: "/music"
+# - name: "Music"
+#   link: "/music"
 - name: "Plugins"
   link: "/projects"
 - name: "About"

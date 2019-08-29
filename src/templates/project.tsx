@@ -85,6 +85,8 @@ type PageProps = {
       type: string
       gumroad: string
       youtube: string
+      hyperfollow: string
+
       parent: {
         modifiedTime: string
         birthTime: string
@@ -245,7 +247,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
       <PBox style={{ textAlign: 'center' }} py={10} px={[6, 6, 8, 10]}>
         <h3>          Minimum Requirements</h3>
         <ul style={{listStyle: 'none'}}>
-          <li>• OSX 10.8 or Windows 10 x64</li>
+          <li>• OSX 10.8 or above</li>
 
 <li>• Audio Units or VST compatible audio host </li>
         </ul>
@@ -268,17 +270,13 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
         <PBox py={10} px={[6, 6, 8, 10]}>
           <Category style={categoryAnimation}>{project.category}</Category>
           <animated.h1 style={titleAnimation}>{project.title}</animated.h1>
+          <animated.p style={titleAnimation}><a href={project.hyperfollow} target="_blank">{project.hyperfollow}</a></animated.p>
+
           <Description style={descAnimation}>
             <div dangerouslySetInnerHTML={{ __html: project.desc }} />
           </Description>
         </PBox>
-        <Content bg={project.color} py={10}>
-          <PBox style={imagesAnimation} px={[6, 6, 8, 10]}>
-            {images.nodes.map(image => (
-              <Img alt={image.name} key={image.childImageSharp.fluid.src} fluid={image.childImageSharp.fluid} />
-            ))}
-          </PBox>
-          <Spotify>
+        <Spotify>
       <SpotifyPlayer
         uri={project.spotify}
         size={size}
@@ -286,6 +284,13 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
         theme={theme}
       />
       </Spotify>
+        <Content bg={project.color} py={5}>
+          <PBox style={imagesAnimation} px={[6, 6, 8, 10]}>
+            {images.nodes.map(image => (
+              <Img alt={image.name} key={image.childImageSharp.fluid.src} fluid={image.childImageSharp.fluid} />
+            ))}
+          </PBox>
+
         </Content> 
   
         
@@ -312,6 +317,7 @@ export const query = graphql`
       gumroad
       youtube
       spotify
+      hyperfollow
       sale
       price
       parent {
