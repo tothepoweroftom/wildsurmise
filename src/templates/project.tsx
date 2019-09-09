@@ -247,9 +247,9 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
       <PBox style={{ textAlign: 'center' }} py={10} px={[6, 6, 8, 10]}>
         <h3>          Minimum Requirements</h3>
         <ul style={{listStyle: 'none'}}>
-          <li>• OSX 10.8 or above</li>
+          <li>• 64 Bit DAW required</li>
 
-<li>• Audio Units or VST compatible audio host </li>
+<li>• Mac - AU/VST/VST3 or Windows - VST/VST3 compatible host</li>
         </ul>
 
       </PBox>
