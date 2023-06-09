@@ -1,8 +1,8 @@
-- title: "Macalla Delay"
-  subtitle: "64-Bit AU & VST Plugin"
-  title_detail: "VST & AU plugin"
+- title: "FX Forms #1 - Spiral Chorus"
+  subtitle: "LCR Chorus Effect"
+  title_detail: "AUv3 plugin"
   hyperfollow: ""
-  slug: "/macalla"
+  slug: "/spiralchorus"
   category: "Audio Plugins"
   color: "white"
   images: "macalla"
@@ -10,60 +10,11 @@
   desc: "Macalla delay is an experimental digital delay effect. With the glitch dial turned to 0 it operates as a standard digital delay. However the magic happens when you turn that glitch dial.
           Time is no longer linear, time itself oscillates and bends and distorts the delay line. The higher the value the more unpredictable the delay sound. <br/> <br/> 
           With Macalla delay create immersive textures from your live or recorded material. Shake up the predictable. Warp the fabric of spacetime. <br/><br/>"
-  gumroad: "https://gum.co/iRtc"
+  gumroad: ""
   spotify: ""
   youtube: "x3i1Q9tItL0"
   overlay: "black"
-  type: "plugin"
-  price: "€20.00"
-  sale: "€15.00"
-
-- title: "Migratory"
-  subtitle: "Album: Wild Surmise"
-  title_detail: "Album: Wild Surmise"
-  slug: "/migratory"
-  hyperfollow: "https://distrokid.com/hyperfollow/wildsurmise/eVnD"
-  category: "Music Works"
-  color: "white"
-  images: "migratory"
-  cover: "./migratory/migratory.jpg"
-  overlay: "white"
-  desc: "Released in 2018, Migratory is Wild Surmise's 9th release. Recorded in Amsterdam, Netherlands."
-  youtube: ''
-  spotify: 'spotify:album:4yJRx7s6EDif3bQ8zsDR3N'
   type: "music"
 
 
-- title: "Tidal Surge"
-  subtitle: "Album: L'Homme Moyen"
-  hyperfollow: "https://distrokid.com/hyperfollow/lhommemoyen/cYyn"
-  title_detail: "Album: L'Homme Moyen"
-  slug: "/tidalsurge"
-  category: "Music Works"
-  color: "white"
-  images: "tidalsurge"
-  cover: "./tidalsurge/tidalsurge.png"
-  overlay: "black"
-  desc: ""
-  youtube: ''
-  spotify: 'spotify:album:0TKGEe0EADw2Aji2VfXs3z'
-  type: "music"
 
-  
-
-- title: "Suaimhneas"
-  subtitle: "Album & Film: L'Homme Moyen"
-  title_detail: "Audiovisual project"
-  hyperfollow: "https://distrokid.com/hyperfollow/lhommemoyen/0Ko"
-  slug: "/suaimhneas"
-  category: "Music Works"
-  color: "white"
-  images: "suaimhneas"
-  cover: "./suaimhneas/suaimhneas-cover.png"
-  overlay: "white"
-  desc: "Suaimhneas is an art project about finding serenity. The calm world that resides within us. The silence that greets us when we close our eyes. We see this through the main character who is facing up to his stresses and difficulties in a busy city and begins to daydream about his peaceful childhood on a quiet and isolated island.
-  The film was shot with Daniel Campo, Pal Blanke and Timothey Gubler on the Blasket Island in West Kerry and on various locations in Amsterdam Netherlands.<br/><br/> The film is available on Youtube and the album can be bought or streamed on Spotify, Apple Music, Deezer and all of the major platforms."
-  gumroad: ""
-  youtube: 'tjv_8akjVEU'
-  spotify: 'spotify:album:1LPBuMVHZJumH1elgZRa16'
-  type: "film"
